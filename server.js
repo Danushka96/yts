@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({
 
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
-    databaseURL: 'https://ytsag-e857b.firebaseio.com'
+    databaseURL: 'YOUR-DATABASE_URL'
 });
 
 const db = admin.firestore();
@@ -38,7 +38,7 @@ async function syncDB(){
     var url = "https://yts.am/api/v2/list_movies.json?page=";
 
     // fire request
-    for(var j=560;j<562;j++){
+    for(var j=1;j<562;j++){
         await request({
             url: url+j,
             json: true,
